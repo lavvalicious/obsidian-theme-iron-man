@@ -1,0 +1,261 @@
+/* Iron Man — Obsidian Community Theme
+   Stark Industries internal document aesthetic: cream-dominant, not dark mode.
+   Red signals hierarchy. Gold signals guidance. */
+
+/* ============================================================
+   PALETTE TOKENS
+   All hex values live here and nowhere else.
+   ============================================================ */
+:root {
+  --im-cream:        #F5F0E8;
+  --im-cream-deep:   #E8E0D0;
+  --im-cream-sidebar:#E5DDD0;
+  --im-ribbon:       #6B1A1A;
+  --im-red:          #8B1A1A;
+  --im-red-h2:       #9B2A2A;
+  --im-red-h3:       #AC3C3C;
+  --im-gold:         #CCA000;
+  --im-gold-dim:     #A07800;
+  --im-text:         #1C1410;
+  --im-italic:       #5C4A3A;
+}
+
+/* ============================================================
+   BASE OBSIDIAN VARIABLES
+   ============================================================ */
+.theme-light,
+.theme-dark {
+  --color-base-00:   var(--im-cream);
+  --color-base-05:   var(--im-cream-deep);
+  --color-base-10:   var(--im-cream-sidebar);
+  --color-base-20:   #DDD8CC;
+  --color-base-25:   #D4CFC3;
+  --color-base-30:   #C8C3B7;
+  --color-base-35:   #BCBAB0;
+  --color-base-40:   #9A9590;
+  --color-base-50:   #7A7570;
+  --color-base-60:   #5A5550;
+  --color-base-70:   #3C3830;
+  --color-base-100:  var(--im-text);
+
+  --color-accent-hsl: 0, 63%, 31%;
+  --color-accent:    var(--im-red);
+
+  --text-normal:        var(--im-text);
+  --text-muted:         var(--im-italic);
+  --text-faint:         #9A9590;
+  --text-on-accent:     var(--im-cream);
+
+  --background-primary:          var(--im-cream);
+  --background-primary-alt:      var(--im-cream-deep);
+  --background-secondary:        var(--im-cream-sidebar);
+  --background-secondary-alt:    #E5DFD3;
+  --background-modifier-border:  #C8C3B7;
+
+  --link-color:                  var(--im-gold);
+  --link-color-hover:            var(--im-red);
+  --link-external-color:         var(--im-gold);
+  --link-external-color-hover:   var(--im-red);
+  --link-unresolved-color:       var(--im-gold-dim);
+
+  --tag-color:           var(--im-cream);
+  --tag-background:      var(--im-red);
+  --tag-background-hover:var(--im-red-h2);
+
+  --code-normal:         var(--im-gold);
+  --code-background:     var(--im-cream-deep);
+  --code-comment:        var(--im-italic);
+  --code-tag:            var(--im-red);
+  --code-keyword:        var(--im-red-h2);
+  --code-string:         var(--im-gold);
+  --code-function:       var(--im-red-h3);
+  --code-operator:       var(--im-italic);
+
+  --blockquote-border-color: var(--im-red);
+  --callout-border-width:    2px;
+
+  --h1-color: var(--im-red);
+  --h2-color: var(--im-red-h2);
+  --h3-color: var(--im-red-h3);
+  --h4-color: var(--im-red-h3);
+  --h5-color: var(--im-italic);
+  --h6-color: var(--im-italic);
+}
+
+/* ============================================================
+   RIBBON & NAV CHROME
+   ============================================================ */
+.workspace-ribbon {
+  background-color: var(--im-ribbon);
+}
+
+.workspace-ribbon .clickable-icon {
+  color: var(--im-cream);
+  opacity: 0.85;
+}
+
+.workspace-ribbon .clickable-icon:hover {
+  color: var(--im-cream);
+  opacity: 1;
+  background-color: rgba(255, 255, 255, 0.12);
+}
+
+.nav-folder-title,
+.nav-file-title {
+  color: var(--im-text);
+}
+
+.nav-file-title.is-active,
+.nav-folder-title.is-active {
+  color: var(--im-red);
+  font-weight: 600;
+}
+
+/* ============================================================
+   HEADINGS
+   ============================================================ */
+.cm-header-1, h1 { color: var(--im-red);    font-weight: 700; }
+.cm-header-2, h2 { color: var(--im-red-h2); font-weight: 600; }
+.cm-header-3, h3 { color: var(--im-red-h3); font-weight: 500; }
+.cm-header-4, h4 { color: var(--im-red-h3); font-weight: 500; }
+
+/* ============================================================
+   BOLD & ITALIC
+   ============================================================ */
+strong, .cm-strong {
+  color: var(--im-red);
+}
+
+em, .cm-em {
+  color: var(--im-italic);
+  font-style: italic;
+}
+
+/* ============================================================
+   INLINE CODE
+   ============================================================ */
+code,
+.cm-inline-code {
+  color:            var(--im-gold);
+  background-color: var(--im-cream-deep);
+  border-radius:    3px;
+  padding:          0.1em 0.3em;
+  font-size:        0.9em;
+}
+
+/* ============================================================
+   CODE BLOCKS
+   ============================================================ */
+pre,
+pre > code,
+.HyperMD-codeblock {
+  background-color: var(--im-cream-deep) !important;
+  color:            var(--im-gold);
+}
+
+.HyperMD-codeblock {
+  border-left: 3px solid var(--im-red);
+}
+
+/* ============================================================
+   BLOCKQUOTES
+   ============================================================ */
+blockquote {
+  border-left: 3px solid var(--im-red);
+  color:       var(--im-italic);
+  font-style:  italic;
+  background:  transparent;
+}
+
+/* ============================================================
+   CALLOUTS
+   ============================================================ */
+.callout {
+  border-left:      3px solid var(--im-red);
+  background-color: var(--im-cream-deep);
+}
+
+.callout-title {
+  color: var(--im-red);
+}
+
+/* ============================================================
+   TAGS
+   ============================================================ */
+.tag {
+  background-color: var(--im-red);
+  color:            var(--im-cream);
+  border:           none;
+  border-radius:    1em;
+  padding:          0.15em 0.6em;
+  font-size:        0.8em;
+  font-weight:      500;
+}
+
+.tag:hover {
+  background-color: var(--im-red-h2);
+  color:            var(--im-cream);
+}
+
+/* ============================================================
+   LINKS
+   ============================================================ */
+a,
+.cm-link,
+.cm-url {
+  color: var(--im-gold);
+}
+
+a:hover,
+.cm-link:hover {
+  color: var(--im-red);
+  text-decoration: underline;
+}
+
+/* ============================================================
+   TABLES
+   ============================================================ */
+th {
+  color:            var(--im-red);
+  border-bottom:    2px solid var(--im-red);
+  font-weight:      600;
+}
+
+td {
+  border-color: var(--background-modifier-border);
+}
+
+/* ============================================================
+   SELECTION & HIGHLIGHT
+   ============================================================ */
+::selection {
+  background-color: rgba(139, 26, 26, 0.2);
+}
+
+.search-result-file-matched-text {
+  background-color: rgba(204, 160, 0, 0.28);
+  color: var(--im-text);
+}
+
+/* ============================================================
+   TABS
+   ============================================================ */
+.workspace-tab-header.is-active {
+  border-top: 2px solid var(--im-red);
+  color: var(--im-red);
+  font-weight: 600;
+}
+
+/* ============================================================
+   GRAPH VIEW
+   Graph is canvas-rendered; Obsidian reads these CSS variables.
+   ============================================================ */
+.theme-light {
+  --graph-node:            var(--im-red);
+  --graph-node-focused:    var(--im-gold);
+  --graph-node-unresolved: #B8B0A8;
+  --graph-node-tag:        var(--im-red-h2);
+  --graph-node-attachment: var(--im-gold-dim);
+  --graph-line:            #C8A88A;
+  --graph-text:            var(--im-text);
+}
